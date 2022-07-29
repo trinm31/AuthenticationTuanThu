@@ -1,4 +1,5 @@
-﻿@model IEnumerable<AuthenticationTuanThu.Models.Category>
+﻿@* khai báo kiểu dữ liệu nhận vào cho view *@
+@model IEnumerable<AuthenticationTuanThu.Models.Category>
 
 @{
     ViewBag.Title = "title";
@@ -6,9 +7,7 @@
 }
 
 <h2>All Categories</h2>
-<h2>List Categories</h2>
 <a asp-controller="Categories" asp-action="Upsert" class="btn btn-primary">Create new </a>
-@* <form class="form-" *@
 <table class="table table-striped">
   <thead>
   <tr>
@@ -29,8 +28,7 @@
       <td>@categories.Name</td>
       <td>@categories.Description</td>
       <td>
-        @* $1$ <a class="btn btn-danger" asp-controller="Category" asp-action="Delete" #1# *@
-        @* $1$    asp-route-Id="@category.Id">Delete</a> #1# *@
+        @* http:localhost:5001/Categories/upsert/3 *@
         <a asp-controller="Categories" asp-action="Upsert" asp-route-Id="@categories.Id" class="btn btn-info">Edit</a>
         <a asp-controller="Categories" asp-action="Delete" asp-route-Id="@categories.Id" class="btn btn-danger" onClick="return confirm('Are you sure about that?')">Delete</a>
       </td>

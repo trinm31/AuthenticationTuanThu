@@ -3,6 +3,8 @@
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
+    
+    // với điều kiện id == 0 thì vòa trương hợp create còn khác ko thì vào update
     var title = Model.Id != 0 ? "Update Categories" : "Create Categories";
 }
 
